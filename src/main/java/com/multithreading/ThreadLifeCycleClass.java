@@ -7,11 +7,12 @@ import static java.lang.Thread.currentThread;
 
 public class ThreadLifeCycleClass implements Runnable {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new ThreadLifeCycleClass());
         System.out.println(STR."Before start() \{thread.getName()} has state -> \{thread.getState().name()}");
 
         thread.start();
+        Thread.sleep(3000);
         System.out.println(STR."After start() \{thread.getName()} has state -> \{thread.getState().name()}");
     }
     @SneakyThrows
